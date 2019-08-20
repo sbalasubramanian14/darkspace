@@ -1,11 +1,20 @@
 const electron = require("electron");
+const { ipcMain } = require("electron");
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const path = require("path");
 const isDev = require("electron-is-dev");
 let mainWindow;
+
 function createWindow() {
-  mainWindow = new BrowserWindow({ show: false });
+  mainWindow = new BrowserWindow({
+    show: false,
+    frame: false,
+    icon: __dirname + "/favicon.ico",
+    webPreferences: {
+      nodeIntegration: true
+    }
+  });
   mainWindow.maximize();
   mainWindow.loadURL(
     isDev
@@ -15,14 +24,21 @@ function createWindow() {
   mainWindow.show();
   mainWindow.on("closed", () => (mainWindow = null));
 }
+
 app.on("ready", createWindow);
+
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
     app.quit();
   }
 });
+
 app.on("activate", () => {
   if (mainWindow === null) {
     createWindow();
   }
+});
+
+ipcMain.on("close-app", (evt, arg) => {
+  app.quit();
 });
