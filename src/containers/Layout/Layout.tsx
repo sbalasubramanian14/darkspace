@@ -22,6 +22,8 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 
 import "./Layout.scss";
+import Browser from "../Browser";
+import BrowserTab from "../../components/BrowserTab";
 
 const { remote } = (window as any).require("electron");
 
@@ -174,7 +176,9 @@ export default function Layout() {
             ))}
           </List>
         </Drawer>
-        <main className={classes.content + " dynamic-height"}></main>
+        <main className={classes.content + " dynamic-height"}>
+          <BrowserTab />
+        </main>
       </div>
     </ThemeProvider>
   );

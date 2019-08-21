@@ -12,7 +12,8 @@ function createWindow() {
     frame: false,
     icon: __dirname + "/favicon.ico",
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      webviewTag: true
     }
   });
   mainWindow.maximize();

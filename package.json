@@ -22,9 +22,11 @@
     "concurrently": "^4.1.2",
     "cross-env": "^5.2.0",
     "electron-is-dev": "^1.1.0",
+    "electron-tabs": "^0.9.5",
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-electron-web-view": "^2.0.1",
     "react-scripts": "3.1.1",
     "typescript": "3.5.3",
     "wait-on": "^3.3.0"
