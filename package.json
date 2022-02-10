@@ -23,7 +23,7 @@
     "cross-env": "^5.2.0",
     "electron-is-dev": "^1.1.0",
     "electron-tabs": "^0.9.5",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-electron-web-view": "^2.0.1",
